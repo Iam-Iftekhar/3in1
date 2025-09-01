@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japanese Minimalist Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'shironeri': '#f3f3f2', // White silk
+                        'sumi': '#1c1c1c',     // Ink black
+                        'kohaku': '#c18c26',    // Amber
+                        'sakura': '#f8d5d9',    // Cherry blossom
+                        'wasurenagusa': '#89c3eb', // Forget-me-not blue
+                        'matcha': '#b5caa0',    // Green tea
+                        'shinshu': '#8f2e14',    // Crimson
+                        'fuji': '#8b81c3',       // Wisteria purple
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body class="font-sans bg-shironeri text-sumi min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-sumi text-shironeri py-4 px-6 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-light tracking-wider">和の美</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#" class="hover:text-kohaku transition">About</a></li>
+                    <li><a href="contact.html" class="hover:text-kohaku transition">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        <!-- Hero Background -->
+        <div class="relative h-screen bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1492571350019-22de08371fd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');">
+            <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                <h2 class="text-5xl text-shironeri font-light tracking-wider">Discover Japanese Aesthetics</h2>
+            </div>
+        </div>
+
+        <!-- Three Sections -->
+        <div class="container mx-auto py-16 px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Section 1 -->
+                <a href="Japanese_Client/index.html" class="group relative h-96 bg-cover bg-center rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105" style="background-image: url('https://images.unsplash.com/photo-1534258936925-c58bed479fcb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                    <div class="absolute inset-0 bg-sumi bg-opacity-50 flex items-center justify-center transition-all duration-300 group-hover:bg-opacity-30">
+                        <h3 class="text-3xl text-shironeri font-medium tracking-wider">茶道</h3>
+                    </div>
+                </a>
+
+                <!-- Section 2 -->
+                <a href="cons.html" class="group relative h-96 bg-cover bg-center rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105" style="background-image: url('https://images.unsplash.com/photo-1518895949257-7621c3c786d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                    <div class="absolute inset-0 bg-sumi bg-opacity-50 flex items-center justify-center transition-all duration-300 group-hover:bg-opacity-30">
+                        <h3 class="text-3xl text-shironeri font-medium tracking-wider">生け花</h3>
+                    </div>
+                </a>
+
+                <!-- Section 3 -->
+                <a href="hr.html" class="group relative h-96 bg-cover bg-center rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105" style="background-image: url('https://images.unsplash.com/photo-1518893883440-e7c0d31c023e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                    <div class="absolute inset-0 bg-sumi bg-opacity-50 flex items-center justify-center transition-all duration-300 group-hover:bg-opacity-30">
+                        <h3 class="text-3xl text-shironeri font-medium tracking-wider">和紙</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-sumi text-shironeri py-8 px-6">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h2 class="text-xl font-light tracking-wider">和の美</h2>
+                    <p class="text-sm mt-2">Discover the essence of Japanese aesthetics</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-kohaku transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-kohaku transition">Terms of Service</a>
+                    <a href="#" class="hover:text-kohaku transition">Contact Us</a>
+                </div>
+            </div>
+            <div class="border-t border-shironeri border-opacity-20 mt-6 pt-6 text-center text-sm">
+                <p>© 2023 Japanese Minimalist Design. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

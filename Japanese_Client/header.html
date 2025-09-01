@@ -1,0 +1,31 @@
+<div class="navbar">
+  <div class="resturant-line8"></div>
+  <div class="resturant-line9"></div>
+  <div class="resturant-line10"></div>
+  <div class="resturant-line11"></div>
+  <img alt="Food7113" src="public/mainlogo.png" class="resturant-food" />
+  <nav>
+    <a href="/index.html"><span class="resturant-text1">Home</span></a>
+    <a href="index.html"><span class="resturant-text100">Resturant</span></a>
+    <a href="menu.html"><span class="resturant-text101">Menu</span></a>
+    <a href="location.html"><span class="resturant-text102">Location</span></a>
+  </nav>
+
+  <div class="resturant-hamburger" onclick="toggleDropdown()">☰</div>
+
+  <!-- Mobile dropdown -->
+  <div class="resturant-dropdown navbar" id="dropdownMenu">
+     <div class="dropdown-header">
+    <div class="line"></div>
+    <img src="public/mainlogo.png" alt="Logo" class="dropdown-logo">
+    <div class="line"></div>
+  </div>
+  <div class="dropdown-links">    
+    <a href="index.html" onclick="toggleDropdown()">Home</a>
+    <a href="menu.html" onclick="toggleDropdown()">Menu</a>
+    <a href="location.html" onclick="toggleDropdown()">Location</a>
+  </div>
+
+  </div>
+</div>
+<script src="script.js"></script>

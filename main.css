@@ -1,0 +1,283 @@
+/* Base styles for all screen sizes (mobile-first) */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #fff;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.hero-content h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #e5e7eb;
+    max-width: 40rem;
+}
+
+.hero-buttons .button {
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button-primary {
+    background-color: #fff;
+    color: #111827;
+}
+
+.button-primary:hover {
+    background-color: #e5e7eb;
+}
+
+.button-secondary {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.button-secondary:hover {
+    background-color: #fff;
+    color: #111827;
+}
+
+/* Sections with Image and Text */
+.content-section {
+    padding: 4rem 1rem;
+}
+
+.content-container {
+    max-width: 80rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.content-section img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.content-text {
+    text-align: center;
+}
+
+.content-text h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+}
+
+.content-text p {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+}
+
+.bg-gray-50 {
+    background-color: #f9fafb;
+}
+
+/* Strategic Services & Business Deals Section */
+.services-deals-section {
+    background-color: #fff;
+    padding: 4rem 1rem;
+}
+
+.services-deals-container {
+    max-width: 80rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+.services-column h3, .deals-column h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.services-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.services-column li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+}
+
+.services-column li svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #6b7280;
+}
+
+.deals-column p {
+    color: #4b5563;
+    line-height: 1.75;
+}
+
+/* Footer Section */
+.footer-section {
+    background-color: #1f2937;
+    color: #fff;
+    padding: 3rem 1rem;
+}
+
+.footer-container {
+    max-width: 80rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.footer-section h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: #9ca3af;
+    text-decoration: none;
+    transition: text-decoration 0.3s ease;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 768px) {
+    /* Hero section for tablets and desktops */
+    .hero-content h1 {
+        font-size: 4rem;
+    }
+    .hero-content h2 {
+        font-size: 2.25rem;
+    }
+    .hero-content p {
+        font-size: 1.125rem;
+    }
+    .hero-buttons {
+        display: flex;
+        gap: 1rem;
+    }
+
+    /* Sections with Image and Text for tablets and desktops */
+    .content-container {
+        flex-direction: row;
+        gap: 2rem;
+    }
+    
+    .content-container-reverse {
+        flex-direction: row-reverse;
+    }
+
+    .content-text {
+        text-align: left;
+    }
+    
+    .content-text-right {
+        text-align: right;
+    }
+    
+    .content-image {
+        width: 50%;
+    }
+    
+    .content-text-col {
+        width: 50%;
+    }
+    
+    .content-text h3 {
+        font-size: 2.5rem;
+    }
+
+    /* Strategic Services & Business Deals Section */
+    .services-deals-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Footer Section */
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .footer-section .text-center {
+        text-align: left;
+    }
+}
+
+/* Media Query for larger desktops */
+@media (min-width: 1024px) {
+    .content-section,
+    .services-deals-section,
+    .footer-section {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+}

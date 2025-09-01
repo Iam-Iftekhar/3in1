@@ -1,0 +1,17 @@
+/* Parallax background elements */
+.resturant-rectangle10,
+.resturant-rectangle11 {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 1520px;
+  height: 785px;
+  z-index: 0; /* keep them visible */
+  pointer-events: none; /* ensure they don't block clicks */
+  will-change: transform;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+

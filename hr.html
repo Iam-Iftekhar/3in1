@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Resources</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+       <style>
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #fff;
+    line-height: 1.6;
+}
+
+/* Header Section */
+.header {
+    background-color: #1E5158;
+    color: #fff;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+}
+
+.header-nav ul {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 1.5rem;
+}
+
+.header-nav ul.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 64px; /* Adjust based on header height */
+    left: 0;
+    width: 100%;
+    background-color: #1E5158;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.header-nav a:hover {
+    color: #fcd34d;
+}
+
+.menu-toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #fff;
+    z-index: 20;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 600px;
+    background-image: url('https://placehold.co/1200x600/4B5563/FFFFFF?text=Human+Resource');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 1rem;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30, 81, 88, 0.548); 
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.25rem;
+}
+
+.hero-text {
+    max-width: 600px;
+    margin: 1rem auto;
+    font-size: 1rem;
+}
+
+.hero .button {
+    padding: 0.75rem 2rem;
+    background-color: #fff;
+    color: #333;
+    text-decoration: none;
+    border-radius: 9999px;
+    font-weight: 500;
+    margin-top: 1.5rem;
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.hero .button:hover {
+    background-color: #f3f4f6;
+}
+
+/* General Section Layout */
+.section {
+    padding: 3rem 1rem;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-header h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.section-header p {
+    font-size: 1.125rem;
+    color: #6b7280;
+}
+
+/* Who We Are Section */
+.who-we-are {
+    background-color: #f9fafb;
+}
+
+.who-we-are .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+.who-we-are .image-container,
+.who-we-are .text-container {
+    width: 100%;
+}
+
+.who-we-are img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.who-we-are h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/* Our Story / Stats */
+.our-story-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.stat-item {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.stat-item span {
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #6b7280;
+    margin-top: 0.25rem;
+}
+
+/* Core Values */
+.core-values {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.value-card {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.value-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.value-card p {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+/* Our Services */
+.our-services {
+    background-color: #f9fafb;
+}
+
+.service-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.service-card-text {
+    padding: 1.5rem;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.service-card a {
+    color: #1E5158;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.service-card a:hover {
+    color: #1d4ed8;
+}
+
+/* Client Testimonials */
+.testimonials {
+    text-align: center;
+}
+
+.testimonials .testimonial-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-style: italic;
+    font-size: 1.125rem;
+    line-height: 1.75;
+    position: relative;
+}
+
+.testimonial-text::before, .testimonial-text::after {
+    content: '“';
+    font-size: 4rem;
+    color: #d1d5db;
+    position: absolute;
+    line-height: 0;
+    top: 0;
+    left: -2rem;
+}
+
+.testimonial-text::after {
+    content: '”';
+    right: -2rem;
+    left: auto;
+}
+
+.client-info {
+    margin-top: 1.5rem;
+}
+
+.client-info h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.stars {
+    color: #fcd34d;
+    font-size: 1.5rem;
+}
+
+.star {
+    display: inline-block;
+    margin: 0 0.1rem;
+}
+
+/* Trusted By */
+.trusted-by {
+    background-color: #f9fafb;
+    text-align: center;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.logo-container img {
+    height: 40px;
+    width: auto;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.logo-container img:hover {
+    opacity: 1;
+}
+
+/* Why Choose Us */
+.why-choose-us {
+    text-align: center;
+}
+
+.reasons {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.reason-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: #f3f4f6;
+}
+
+.reason-card .number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1E5158;
+    margin-bottom: 0.5rem;
+}
+
+.reason-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.reason-card p {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: #1E5158;
+    color: #fff;
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.contact-section .button {
+    padding: 0.75rem 2.5rem;
+    background-color: #2563eb;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 9999px;
+    font-weight: 500;
+    margin-top: 1.5rem;
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.contact-section .button:hover {
+    background-color: #1d4ed8;
+}
+
+/* Footer */
+.footer {
+    background-color: #374151;
+    color: #d1d5db;
+    padding: 3rem 1rem;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+}
+
+.footer-logo h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-links h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-links a {
+    color: #9ca3af;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+/* Media Queries */
+@media (min-width: 600px) {
+    .hero {
+        height: 700px;
+    }
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+    .hero p {
+        font-size: 1.5rem;
+    }
+
+    .who-we-are .container {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .who-we-are .text-container {
+        width: 50%;
+    }
+
+    .who-we-are .image-container {
+        width: 50%;
+    }
+
+    .our-story-stats {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .core-values, .service-cards, .reasons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+}
+
+@media (min-width: 768px) {
+    .header-nav ul {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        background-color: transparent;
+        box-shadow: none;
+    }
+    .menu-toggle {
+        display: none;
+    }
+}
+
+@media (min-width: 900px) {
+    .hero {
+        height: 800px;
+    }
+    .hero h1 {
+        font-size: 4.5rem;
+    }
+    .hero p {
+        font-size: 1.75rem;
+    }
+
+    .who-we-are .container {
+        gap: 4rem;
+    }
+
+    .core-values, .service-cards, .reasons {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .footer-links {
+        flex-direction: row;
+        gap: 3rem;
+    }
+}
+
+@media (min-width: 1400px) {
+    .section {
+        padding: 5rem 1rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <h1 class="header-logo">和の美</h1>
+            <nav class="header-nav">
+                <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+                <ul id="menu-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero" style="background-image: url('https://placehold.co/1400x800/262626/FFFFFF?text=Human+Resource');">
+        <div class="hero-content">
+            <h1>Human Resource</h1>
+            <p>Your Trusted Partner with you all the way</p>
+            <p class="hero-text">we Provide lorem ndkjnajcasjkkajsnjasnasncasnclasnclkansckans.kcnalskcnal ok kjdjksbfsbfsd</p>
+            <a href="#" class="button">Button</a>
+        </div>
+    </div>
+
+    <div class="section who-we-are">
+        <div class="section-header">
+            <h2>Who We Are</h2>
+            <p>ProServ Solutions is a leading provider of integrated business services, committed to delivering excellence across Human Resources, Cleaning Services, and Facility Management</p>
+        </div>
+        <div class="container">
+            <div class="image-container">
+                <img src="https://placehold.co/600x400/D1D5DB/FFFFFF?text=Our+Story" alt="Our Story Image">
+            </div>
+            <div class="text-container">
+                <h3>Our Story</h3>
+                <p>Founded with a vision to simplify business operations, Solutions has grown from a small local service provider to a trusted partner for organizations of all sizes. Our journey began with a simple belief businesses should focus on what they do best while we handle the essential support services. Today, we serve hundreds of clients across diverse industries, providing them with the expertise, reliability, and innovation they need to succeed. Our integrated approach means you get consistent, high-quality service across all areas of your business operations</p>
+            </div>
+        </div>
+        <div class="our-story-stats container">
+            <div class="stat-item">500+<span>Satisfied Clients</span></div>
+            <div class="stat-item">10+<span>years of experience</span></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-header">
+            <h2>Our Core Values</h2>
+        </div>
+        <div class="core-values">
+            <div class="value-card">
+                <h3>Excellence</h3>
+                <p>bsjsndjenskjdnvkjsnvsmsdkl misdikvmsvismdvikisdikvim skvdvdvdmanfnfd.nvmdtryf</p>
+            </div>
+            <div class="value-card">
+                <h3>Excellence</h3>
+                <p>bsjandiknskjanvkjsnvsmsdkl misdikvmsvismavikmsdikvim skvdvdvamanfnfd, nvmafriv</p>
+            </div>
+            <div class="value-card">
+                <h3>Excellence</h3>
+                <p>bsjshdjknskidrwkjsnvamsaki bsjsnajknskjanvkjsnvamisaki msdikvmsvismdvikmsdikvim msdlkvmsvismdvikmsdlkvim</p>
+            </div>
+            <div class="value-card">
+                <h3>Excellence</h3>
+                <p>bsjsndjktskjdnvkjsnvsmsdki</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section our-services">
+        <div class="section-header">
+            <h2>Our Services</h2>
+            <p>Isdniksndkvsdlkymsdvikmslkdmyskvvsnisanvikns dkvniksdnviksrivikdnsInvdksnvkisdnikvrilkavniksd nikvsnkdvinskavriksdnisndivskvsknisavsik</p>
+        </div>
+        <div class="service-cards">
+            <div class="service-card">
+                <img src="https://placehold.co/400x300/F3F4F6/6B7280?text=HR+Image" alt="Human Resources">
+                <div class="service-card-text">
+                    <h3>Human Resources</h3>
+                    <a href="#">Learn More &rarr;</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://placehold.co/400x300/F3F4F6/6B7280?text=HR+Image" alt="Human Resources">
+                <div class="service-card-text">
+                    <h3>Human Resources</h3>
+                    <a href="#">Learn More &rarr;</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://placehold.co/400x300/F3F4F6/6B7280?text=HR+Image" alt="Human Resources">
+                <div class="service-card-text">
+                    <h3>Human Resources</h3>
+                    <a href="#">Learn More &rarr;</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://placehold.co/400x300/F3F4F6/6B7280?text=HR+Image" alt="Human Resources">
+                <div class="service-card-text">
+                    <h3>Human Resources</h3>
+                    <a href="#">Learn More &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section testimonials">
+        <div class="section-header">
+            <h2>What Our Clients Say</h2>
+        </div>
+        <div class="testimonial-text">
+            Solutions is a leading provider of Integrated business services, committed to delivering excellence across Human Resources, Cleaning Services, and Facility Management.
+        </div>
+        <div class="client-info">
+            <h4>Suprio Biswas</h4>
+            <div class="stars">
+                <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
+            </div>
+            <p>CECATH</p>
+        </div>
+    </div>
+    
+    <div class="section trusted-by">
+        <div class="section-header">
+            <h2>Trusted By Leading Organizations</h2>
+        </div>
+        <p>Solutions is a leading provider of integrated business services, committed to delivering excellence across Human Resources, Cleaning Services, and Facility Management.</p>
+        <div class="logo-container">
+            <img src="https://placehold.co/100x40/F9FAFB/9CA3AF?text=amazon" alt="Amazon Logo">
+            <img src="https://placehold.co/100x40/F9FAFB/9CA3AF?text=Microsoft" alt="Microsoft Logo">
+            <img src="https://placehold.co/100x40/F9FAFB/9CA3AF?text=Google" alt="Google Logo">
+        </div>
+    </div>
+    
+    <div class="section why-choose-us">
+        <div class="section-header">
+            <h2>Why Chose US</h2>
+            <p>Solutions is a leading provider of integrated business services, committed to delivering</p>
+        </div>
+        <div class="reasons">
+            <div class="reason-card">
+                <span class="number">1</span>
+                <h3>Excellence</h3>
+                <p>bsjsndjktskjdnvkjsnvsmsdki</p>
+            </div>
+            <div class="reason-card">
+                <span class="number">2</span>
+                <h3>Business Consultation</h3>
+                <p>bsjandjknskxjdovksivamsaki</p>
+            </div>
+            <div class="reason-card">
+                <span class="number">3</span>
+                <h3>Excellence</h3>
+                <p>bajshdjkmsxjanvięsinysmsdkl</p>
+            </div>
+            <div class="reason-card">
+                <span class="number">4</span>
+                <h3>Excellence</h3>
+                <p>bsjshdjknskidrwkjsnvamsaki</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="contact-section">
+        <h2>Ready To Get Started</h2>
+        <a href="#" class="button">Get In Touch</a>
+    </div>
+
+    <div class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h4>Human Resources</h4>
+            </div>
+            <div class="footer-links">
+                <div>
+                    <h4>Pages</h4>
+                    <ul>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Pages</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Pages</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const menuList = document.getElementById('menu-list');
+
+            menuToggle.addEventListener('click', function() {
+                menuList.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+</html>

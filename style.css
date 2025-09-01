@@ -1,0 +1,30 @@
+/* Additional custom styles */
+@layer utilities {
+    .tracking-wider {
+        letter-spacing: 0.1em;
+    }
+    
+    .transition {
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 200ms;
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f3f3f2;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1c1c1c;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #8f2e14;
+}

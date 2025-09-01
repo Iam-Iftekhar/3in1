@@ -1,0 +1,1717 @@
+.resturant-container {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column; /* Ensure the main content is centered vertically */
+}
+
+.resturant-resturant {
+  width: 100%;
+  height: auto;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  background-color: rgba(46, 162, 71, 0);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(50px); /* start slightly below */
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0); /* move into place */
+}
+
+/* Header section */
+.resturant-text1{
+  position: absolute;
+  color: rgba(246, 232, 195, 1);
+  height: auto;
+  font: 400 30px / normal "Sawarabi Mincho", serif;
+  text-align: center;
+  font-stretch: normal;
+  text-decoration: none;
+  display: flex;
+  left: 300px;
+  top: 30px;  
+}
+.resturant-line8,
+.resturant-line9,
+.resturant-line10 {
+  position: absolute;
+  top: 0; /* start from top */
+  width: 1px; /* very thin horizontal size */
+  height: 11vh; /* vertical height of the bar */
+  background-color: rgba(246, 232, 195, 1);
+}
+
+.resturant-line11 {
+  margin-top: 80px;
+  left: 0px;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  background-color: rgba(246, 232, 195, 1);
+}
+
+.resturant-line8 {
+  left: 6vw;
+}
+.resturant-line9 {
+  left: 67vw;
+}
+.resturant-line10 {
+  left: 77vw;
+}
+
+.resturant-text100,
+.resturant-text101,
+.resturant-text102 {
+  position: absolute;
+  color: rgba(246, 232, 195, 1);
+  height: auto;
+  font: 400 30px / normal "Sawarabi Mincho", serif;
+  text-align: left;
+  font-stretch: normal;
+  text-decoration: none;
+  display: flex;
+}
+
+.resturant-text100 {
+  top: 31px;
+  left: 124px;
+}
+.resturant-text101 {
+  top: 29px;
+  left: 1063px;
+}
+.resturant-text102 {
+  top: 29px;
+  left: 1230px;
+}
+
+.resturant-food {
+  top: 22px;
+  left: 24px;
+  width: 50px;
+  height: 45px;
+  position: absolute;
+}
+
+/* Hamburger button (hidden on desktop) */
+.resturant-hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: rgba(246, 232, 195, 1);
+  z-index: 100;
+}
+
+/* Mobile dropdown (hidden by default) */
+
+.resturant-dropdown {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 70vw;
+  max-width: 400px;
+  min-width: 250px;
+  background: rgba(0, 55, 61, 1);
+  box-shadow: -4px 0 24px 0 rgba(46, 162, 71, 0);
+  flex-direction: column;
+  padding: 40px 32px 24px 32px;
+  z-index: 10001;
+  transform: translateX(100%);
+  transition: transform 0.55s cubic-bezier(0.77, 0, 0.18, 1);
+  border: none;
+  border-radius: 0;
+}
+.dropdown-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(46, 162, 71, 0);
+  z-index: 10000;
+  transition: opacity 0.3s;
+}
+
+.dropdown-links {
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+.dropdown-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px; /* space between logo and lines */
+  margin-bottom: 40px; /* space before menu items */
+}
+
+.dropdown-header .line {
+  flex: 1;
+  height: 2px;
+  background-color: rgba(246, 232, 195, 1); /* gold-ish line */
+}
+
+.dropdown-logo {
+  height: 60px; /* adjust logo size */
+  object-fit: contain;
+}
+
+/* Responsive header nav */
+@media (max-width: 1268px) {
+  .dropdown-overlay.open {
+    display: block;
+    opacity: 1;
+  }
+
+  .resturant-dropdown.open {
+    display: flex !important;
+    transform: translateX(0);
+  }
+
+  .resturant-dropdown a {
+    color: rgba(246, 232, 195, 1);
+    padding: 8px 12px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .resturant-nav,
+  .resturant-text101,
+  .resturant-text102 {
+    display: none;
+  }
+
+  .resturant-line8 {
+    height: 70px;
+    left: 80px; /* Adjusted for better visibility */
+  }
+
+  .resturant-line9,
+  .resturant-line10 {
+    display: none; /* Hide the second line on mobile */
+  }
+
+  .resturant-line11 {
+    margin-top: 70px;
+  }
+
+  .resturant-text100 {
+    position: absolute;
+    top: 20px;
+    left: 90px; /* Adjusted for better visibility */
+    font-size: 25px; /* Smaller font size for mobile */
+  }
+
+  .resturant-food {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 44px;
+    height: 37px;
+  }
+
+  .resturant-hamburger {
+    display: block;
+  }
+}
+
+/* End header section */
+
+/* Hero section */
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center;
+  gap: 2rem;
+  position: absolute;
+  left: 50%; /* push center horizontally */
+  top: 40%; /* move it lower on the screen */
+  transform: translateX(-50%); /* perfect centering */
+
+  color: rgba(246, 232, 195, 1);
+  font: 400 25px/1.2 "Sawarabi Mincho", serif;
+  font-stretch: normal;
+  text-decoration: none;
+  text-align: center;
+}
+
+.resturant-frame19 {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 770px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  background-color: rgba(0, 0, 0, 1);
+  background-attachment: fixed;
+}
+
+.resturant-rectangle10 {
+  background-image: url("public/rectangle106811-l8r-1500w.png");
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 785px;
+  position: absolute;
+  background-attachment: fixed;
+  z-index: 0;
+}
+
+.resturant-text103 {
+  font-size: 3.5rem;
+}
+.resturant-text108 {
+  flex-direction: row;
+  position: relative;
+  color: rgba(246, 232, 195, 1);
+  height: auto;
+  font: 400 25px / normal "Sawarabi Mincho", serif;
+  text-align: left;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.resturant-text108 {
+  cursor: pointer;
+}
+
+.resturant-frame210 {
+  color: rgba(246, 232, 195, 1);
+  position: absolute;
+  bottom: 200px; /* distance from parent bottom */
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 216px;
+  height: 45px;
+  padding: 10px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+  gap: 10px;
+  z-index: 1;
+  border: 1px solid rgba(246, 232, 195, 1);
+  border-radius: 10px;
+  background-color: rgba(246, 232, 195, 0);
+
+  cursor: pointer; /* 🔑 makes the whole button show hand pointer */
+  transition: all 0.2s ease; /* smooth hover effect */
+  font-size: 1.5rem;
+}
+
+/* Optional: hover effect */
+.resturant-frame210:hover {
+  background-color: rgba(246, 232, 195, 0.3);
+}
+
+.resturant-frame20 {
+  top: 630px;
+  left: 0px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  background-color: rgba(46, 162, 71, 0);
+}
+
+.resturant-frame22 {
+  top: 625px;
+  left: 0px;
+  width: 100%;
+  height: 222px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+/* End hero section */
+
+.wave-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.resturant-vector1 {
+  top: 425px;
+  left: 37px;
+  width: 100%;
+  height: 600px;
+  display: block;
+  transform: translateX(-2.5%);
+  max-width: none;
+  position: absolute;
+}
+
+.resturant-frame21 {
+  top: 120vh;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  height: 670vh;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  background-color: rgba(0, 55, 61, 1);
+}
+
+.resturant-line12 {
+  position: absolute;
+  top: 357px; /* keep vertical position */
+  left: 50%; /* start at center */
+  width: 105%; /* make it slightly wider */
+  height: 1px; /* line thickness */
+  transform: translateX(-50%); /* center after width expansion */
+  display: block; /* remove inline gaps */
+  max-width: none;
+  background-color: rgba(246, 232, 195, 1); /* line color */
+}
+
+.resturant-frame37 {
+  top: 2465px;
+  left: 128px;
+  width: 100%;
+  max-width: 425px;
+  height: 442px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  background-size: cover;
+  background-image: url("public/tq_x8kzym1ps--b7jg-500w.png");
+}
+
+.resturant-frame28 {
+  top: 49vh;
+  left: 215px;
+  width: 100%;
+  max-width: 1094px;
+  height: 1322px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(246, 232, 195, 1);
+  border-style: solid;
+  border-width: 1px;
+}
+
+.resturant-text109 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* better than align-content here */
+  margin-top: 4.5rem;
+  width: 100%;
+  position: relative;
+  color: rgba(246, 232, 195, 1);
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 0.85; /* tighter spacing */
+  font-family: "Sawarabi Mincho", serif;
+  text-align: center;
+}
+
+.resturant-text109 p,
+.resturant-text109 span {
+  margin: 0; /* remove default margins */
+  padding: 0;
+}
+
+.resturant-frame211 {
+  gap: 10px;
+  top: 486px;
+  left: 471px;
+  width: 151px;
+  height: 39px;
+  display: flex;
+  padding: 10px 20px;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(246, 232, 195, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.resturant-text119 {
+  color: rgba(246, 232, 195, 1);
+  height: auto;
+  font: 400 25px / normal "Inter", serif;
+  text-align: left;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.resturant-frame29 {
+  top: 601px;
+  left: 0px;
+  width: 100%;
+  max-width: 552px;
+  height: 721px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(246, 232, 195, 1);
+  border-style: solid;
+  border-width: 1px;
+}
+
+.resturant-frame30 {
+  top: 601px;
+  left: 552px;
+  width: 100%;
+  max-width: 542px;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(246, 232, 195, 1);
+  border-style: solid;
+  border-width: 1px;
+}
+
+.resturant-text120 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* better than align-content here */
+  margin-top: 1rem;
+  width: 100%;
+  position: relative;
+  color: rgba(246, 232, 195, 1);
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 0.85; /* tighter spacing */
+  font-family: "Sawarabi Mincho", serif;
+  text-align: center;
+}
+
+.resturant-frame30 button {
+  margin-bottom: -20rem;
+}
+
+.heading {
+  font-size: 50px;
+}
+
+.resturant-frame212 {
+  gap: 10px;
+  top: 493px;
+  left: 120px;
+  width: 151px;
+  height: 39px;
+  display: flex;
+  padding: 10px 20px;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(246, 232, 195, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.resturant-text137 {
+  color: rgba(246, 232, 195, 1);
+  height: auto;
+  font: 400 25px / normal "Inter", serif;
+  text-align: left;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.resturant-frame3 {
+  gap: 10px;
+  top: 493px;
+  left: 303px;
+  width: 151px;
+  height: 39px;
+  display: flex;
+  padding: 10px 20px;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(246, 232, 195, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.resturant-text138 {
+  color: rgba(246, 232, 195, 1);
+  height: auto;
+  font: 400 25px / normal "Inter", serif;
+  text-align: left;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.resturant-pexelsamar175936401 {
+  top: 694px;
+  left: 75px;
+  width: 100%;
+  max-width: 396px;
+  height: 535px;
+  position: absolute;
+}
+
+.resturant-frame31 {
+  top: 34%;
+  left: 0px;
+  width: 100vw;
+  height: 520px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  border-color: rgba(246, 232, 195, 1);
+  border-style: solid;
+  border-width: 1px;
+  background-size: cover;
+  background-image: url("public/tq_vjnkaanot4-y9yp-600h.png");
+}
+
+.resturant-text139 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap; /* allow text to wrap */
+  margin-top: 1rem;
+  width: 70%;
+  left: 50%; /* push center horizontally */
+  top: 30%; /* move it lower on the screen */
+  transform: translateX(-50%); /* perfect centering */
+  position: relative;
+  color: rgba(246, 232, 195, 1);
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 0.85; /* tighter spacing */
+  font-family: "Sawarabi Mincho", serif;
+  text-align: center;
+}
+
+.resturant-text139 button {
+  margin-bottom: -17rem;
+}
+
+.resturant-frame213 {
+  gap: 10px;
+  top: 297px;
+  left: 620px;
+  width: 100%;
+  max-width: 224px;
+  height: 39px;
+  display: flex;
+  padding: 10px 20px;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(246, 232, 195, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.resturant-text142 {
+  color: rgba(246, 232, 195, 1);
+  height: auto;
+  font: 400 25px / normal "Inter", serif;
+  text-align: left;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.resturant-text143 {
+  top: 3131px;
+  left: 386px;
+  color: rgba(246, 232, 195, 1);
+  height: auto;
+  position: absolute;
+  font: 400 45px / normal "Sawarabi Mincho", serif;
+  text-align: center;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.resturant-frame32 {
+  top: 3272px;
+  left: -3px;
+  width: 101%;
+  height: 491px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(246, 232, 195, 1);
+  border-style: solid;
+  border-width: 1px;
+}
+
+.resturant-frame33 {
+  top: 84px;
+  left: 63px;
+  width: 100%;
+  max-width: 383px;
+  height: 326px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+.resturant-frame34 {
+  display: flex;
+  flex-direction: row; /* desktop: row */
+  gap: 1rem; /* spacing between reviews */
+  width: 100%; /* full width of container */
+  max-width: 1100px; /* optional max width */
+  overflow: visible; /* show all content */
+  align-items: flex-start;
+  flex-wrap: wrap; /* allow wrapping on smaller screens */
+}
+
+/* Each review card */
+.resturant-frame34 > div {
+  flex: 1 1 300px; /* grow/shrink, min 300px */
+  min-width: 250px; /* avoid shrinking too much */
+}
+
+.resturant-text144 {
+  left: -2px;
+  color: rgba(246, 232, 195, 1);
+  width: 100%;
+  max-width: 358px;
+  height: auto;
+  position: absolute;
+  font: 400 20px / normal "Sawarabi Mincho", serif;
+  text-align: center;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.resturant-text154 {
+  left: 5%;
+  margin-top: 5.7%;
+  color: rgba(246, 232, 195, 1);
+  width: 100%;
+  max-width: 358px;
+  height: auto;
+  position: absolute;
+  font: 400 20px / normal "Sawarabi Mincho", serif;
+  text-align: center;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.resturant-text164 {
+  top: 89px;
+  left: 566px;
+  color: rgba(246, 232, 195, 1);
+  width: 100%;
+  max-width: 358px;
+  height: auto;
+  position: absolute;
+  font: 400 20px / normal "Sawarabi Mincho", serif;
+  text-align: center;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.resturant-text174 {
+  top: 97px;
+  left: 1044px;
+  color: rgba(246, 232, 195, 1);
+  width: 100%;
+  max-width: 358px;
+  height: auto;
+  position: absolute;
+  font: 400 20px / normal "Sawarabi Mincho", serif;
+  text-align: center;
+  font-stretch: normal;
+  text-decoration: none;
+}
+/*review line-1   */
+.resturant-line13 {
+  top: 3272.01806640625px;
+  left: 487.0213623046875px;
+  width: 1px;
+  height: 490px;
+  position: absolute;
+  background-color: rgba(246, 232, 195, 1);
+}
+
+/*review line-2   */
+.resturant-line14 {
+  top: 3272.5517578125px;
+  left: 973.035400390625px;
+  width: 1px;
+  height: 490px;
+  position: absolute;
+  background-color: rgba(246, 232, 195, 1);
+}
+
+.resturant-frame35 {
+  top: 2297px;
+  left: 25px;
+  width: 100%;
+  height: 682px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.resturant-text184 {
+  left: 50%; /* push center horizontally */
+  top: 5%; /* move it lower on the screen */
+  transform: translateX(-50%);
+  color: rgba(246, 232, 195, 1);
+  height: auto;
+  position: absolute;
+  font-size: 45px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Sawarabi Mincho;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.resturant-text185 {
+  top: 272px;
+  left: -1409px;
+  color: rgba(255, 255, 255, 1);
+  width: 100%;
+  max-width: 1428px;
+  height: auto;
+  position: absolute;
+  font-size: 45px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Sawarabi Mincho;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.resturant-frame39 {
+  top: 9px;
+  left: 94px;
+  width: 100%;
+  max-width: 1281px;
+  height: 656px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(246, 232, 195, 1);
+  border-style: solid;
+  border-width: 1px;
+}
+
+.resturant-text186 {
+  left: 70%; /* push center horizontally */
+  top: 30%; /* move it lower on the screen */
+  transform: translateX(-50%);
+  color: rgba(246, 232, 195, 1);
+  width: 100%;
+  max-width: 713px;
+  height: auto;
+  position: absolute;
+  font-size: 25px;
+  font-style: Regular;
+  text-align: right;
+  font-family: Sawarabi Mincho;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: right;
+  padding-right: 2rem;
+}
+
+.resturant-frame41 {
+  top: 3838px;
+  left: -3px;
+  width: 101%;
+  height: 411px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(246, 232, 195, 1);
+  border-style: solid;
+  border-width: 1px;
+  background-size: cover;
+  background-image: url("public/tq_7uwzkazpf6-chtk-500h.png");
+}
+
+.resturant-frame41 button {
+  margin-bottom: -2.7rem;
+}
+
+.overlay-rectangle {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(90, 89, 89, 0.5);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.resturant-frame214 {
+  gap: 10px;
+  top: 222px;
+  left: 605px;
+  width: 245px;
+  height: 39px;
+  display: flex;
+  padding: 10px 20px;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(246, 232, 195, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.resturant-text187 {
+  color: rgba(246, 232, 195, 1);
+  height: auto;
+  font-size: 25px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.resturant-text188 {
+  top: 72px;
+  left: 87px;
+  color: rgba(246, 232, 195, 1);
+  width: 100%;
+  max-width: 1282px;
+  height: auto;
+  position: absolute;
+  font-size: 45px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Sawarabi Mincho;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.resturant-frame36 {
+  top: 2409px;
+  left: 8px;
+  width: 99%;
+  height: 553px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(246, 232, 195, 1);
+  border-style: solid;
+  border-width: 1px;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.resturant-frame27 {
+  top: 454px;
+  left: 1201px;
+  width: 100%;
+  max-width: 203px;
+  height: 499px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-radius: 150px 0;
+  background-size: cover;
+  background-image: url("public/tq_bszlzyvues-z5c-300w.png");
+}
+
+.resturant-frame26 {
+  top: 546px;
+  left: 914px;
+  width: 100%;
+  max-width: 199px;
+  height: 497px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-radius: 150px 0;
+  background-size: cover;
+  background-image: url("public/tq_k7wqztgvm4-prbp-500h.png");
+}
+
+.resturant-frame25 {
+  top: 622px;
+  left: 632px;
+  width: 100%;
+  max-width: 201px;
+  height: 490px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-radius: 150px 0;
+  background-size: cover;
+  background-image: url("public/tq_f8qqv56hqb-l4v6b-300w.png");
+}
+
+.resturant-frame23 {
+  top: 484px;
+  left: 74px;
+  width: 100%;
+  max-width: 202px;
+  height: 497px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-radius: 150px 0;
+  background-size: cover;
+  background-image: url("public/tq_gncauz4ljo-3k4s-300w.png");
+}
+
+.resturant-frame24 {
+  top: 575px;
+  left: 350px;
+  width: 100%;
+  max-width: 201px;
+  height: 497px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-radius: 150px 0;
+  background-size: cover;
+  background-image: url("public/tq_vkixjsmgkw-8uzb-300w.png");
+}
+
+/* Footer section */
+.resturant-line15 {
+  bottom: 450px;
+  left: 0px;
+  width: 664px;
+  height: 1px;
+  position: absolute;
+  background-color: rgba(246, 232, 195, 1);
+}
+/* Footer line-2 */
+.resturant-line16 {
+  bottom: 450px;
+  right: 0px;
+  width: 681px;
+  height: 1px;
+  position: absolute;
+  background-color: rgba(246, 232, 195, 1);
+}
+
+.resturant-frame42 {
+  bottom: 0px;
+  left: 60px;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  position: absolute;
+}
+
+.resturant-frame40 {
+  top: -125px;
+  width: 1401px;
+  height: 625px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  border-color: rgba(246, 232, 195, 1);
+  border-style: solid;
+  border-width: 1px;
+}
+
+.resturant-line4 {
+  top: 273.2001953125px;
+  left: 671.0283203125px;
+  width: 210px;
+  height: 1px;
+  position: absolute;
+  background-color: rgba(246, 232, 195, 1);
+}
+
+.resturant-line5 {
+  top: 278.10986328125px;
+  left: 1071px;
+  width: 210px;
+  height: 1px;
+  position: absolute;
+  background-color: rgba(246, 232, 195, 1);
+}
+
+/* Footer line-3 */
+.resturant-line3 {
+  top: 259.2880859375px;
+  left: 511px;
+  width: 1px;
+  height: 297px;
+  position: absolute;
+  background-color: rgba(246, 232, 195, 1);
+}
+
+.resturant-text189 {
+  top: 281px;
+  left: 672px;
+  color: rgba(246, 232, 195, 1);
+  width: 82px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Sawarabi Mincho;
+  font-weight: 400;
+  line-height: 50px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.resturant-text199 {
+  top: 377px;
+  left: 121px;
+  color: rgba(246, 232, 195, 1);
+  width: 194px;
+  height: auto;
+  position: absolute;
+  font-size: 40px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Sawarabi Mincho;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.resturant-text200 {
+  top: 290px;
+  left: 1079px;
+  color: rgba(246, 232, 195, 1);
+  width: 82px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Sawarabi Mincho;
+  font-weight: 400;
+  line-height: 50px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.resturant-facebook {
+  top: 452px;
+  left: 121px;
+  width: 100%;
+  max-width: 76px;
+  height: 51px;
+  position: absolute;
+}
+
+.resturant-whats-app {
+  top: 452px;
+  left: 315px;
+  width: 100%;
+  max-width: 74px;
+  height: 51px;
+  position: absolute;
+}
+
+.resturant-linked-in2 {
+  top: 452px;
+  left: 218px;
+  width: 100%;
+  max-width: 71px;
+  height: 51px;
+  position: absolute;
+}
+
+.resturant-text210 {
+  top: 220px;
+  left: 672px;
+  color: rgba(246, 232, 195, 1);
+  width: 85px;
+  height: auto;
+  position: absolute;
+  font-size: 30px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Sawarabi Mincho;
+  font-weight: 400;
+  line-height: 70px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.resturant-text211 {
+  top: 223px;
+  left: 1079px;
+  color: rgba(246, 232, 195, 1);
+  width: 85px;
+  height: auto;
+  position: absolute;
+  font-size: 30px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Sawarabi Mincho;
+  font-weight: 400;
+  line-height: 70px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.resturant-text212 {
+  top: 264px;
+  left: 121px;
+  color: rgba(246, 232, 195, 1);
+  height: auto;
+  position: absolute;
+  font-size: 50px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Sawarabi Mincho;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.footer-logo {
+  position: absolute;
+  top: 20%;
+  left: 46%;
+
+  width: 100%;
+  max-width: 110px; /* adjust logo width */
+  height: auto; /* keeps aspect ratio */
+
+  object-fit: contain; /* ensures full logo fits */
+}
+
+/* End footer section */
+
+/* Responsive design for non-header sections */
+@media (max-width: 1200px) {
+  .resturant-frame19,
+  .resturant-frame20,
+  .resturant-frame21,
+  .resturant-frame22,
+  .resturant-frame28,
+  .resturant-frame29,
+  .resturant-frame30,
+  .resturant-frame31,
+  .resturant-frame32,
+  .resturant-frame33,
+  .resturant-frame34,
+  .resturant-frame35,
+  .resturant-frame36,
+  .resturant-frame37,
+  .resturant-frame39,
+  .resturant-frame40,
+  .resturant-frame41,
+  .resturant-frame42,
+  .resturant-frame211,
+  .resturant-frame212,
+  .resturant-frame213,
+  .resturant-frame214 {
+    left: 0 !important;
+    max-width: 100vw !important;
+    width: 100vw !important;
+    box-sizing: border-box;
+  }
+  .resturant-rectangle10 {
+    left: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+  }
+  .resturant-text103,
+  .resturant-text107,
+  .resturant-text108,
+  .resturant-text109,
+  .resturant-text119,
+  .resturant-text120,
+  .resturant-text137,
+  .resturant-text138,
+  .resturant-text139,
+  .resturant-text142,
+  .resturant-text143,
+  .resturant-text144,
+  .resturant-text154,
+  .resturant-text164,
+  .resturant-text174,
+  .resturant-text184,
+  .resturant-text185,
+  .resturant-text186,
+  .resturant-text187,
+  .resturant-text188,
+  .resturant-text189,
+  .resturant-text199,
+  .resturant-text200,
+  .resturant-text210,
+  .resturant-text211,
+  .resturant-text212 {
+    left: 2vw !important;
+    right: 2vw !important;
+    max-width: 96vw !important;
+    width: 96vw !important;
+    font-size: min(4vw, 32px) !important;
+    position: relative !important;
+  }
+  .resturant-pexelsamar175936401 {
+    left: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: auto !important;
+  }
+}
+
+@media (max-width: 900px) {
+  /* Center .resturant-text103 and .resturant-text107 for small screens */
+  .resturant-text103,
+  .resturant-text107 {
+    text-align: center !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    position: relative !important;
+    box-sizing: border-box !important;
+  }
+  .resturant-frame19,
+  .resturant-frame20,
+  .resturant-frame21,
+  .resturant-frame22,
+  .resturant-frame28,
+  .resturant-frame29,
+  .resturant-frame30,
+  .resturant-frame32,
+  .resturant-frame33,
+  .resturant-frame34,
+  .resturant-frame35,
+  .resturant-frame36,
+  .resturant-frame37,
+  .resturant-frame39,
+  .resturant-frame40,
+  .resturant-frame41,
+  .resturant-frame42,
+  .resturant-frame211,
+  .resturant-frame212,
+  .resturant-frame213,
+  .resturant-frame214 {
+    left: 0 !important;
+    max-width: 100vw !important;
+    width: 100vw !important;
+    box-sizing: border-box;
+    min-width: 0 !important;
+  }
+  .resturant-text103,
+  .resturant-text109,
+  .resturant-text139,
+  .resturant-text188 {
+    font-size: min(6vw, 28px) !important;
+    left: 2vw !important;
+    right: 2vw !important;
+    max-width: 96vw !important;
+    width: 96vw !important;
+    position: relative !important;
+  }
+  .resturant-frame29,
+  .resturant-frame30 {
+    height: auto !important;
+    min-height: 200px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .resturant-rectangle10 {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 785px;
+    position: absolute;
+    background-attachment: fixed;
+    z-index: 0;
+    background-image: url("public//hero-img.jpg");
+    background-size: cover; /* makes image cover full container */
+    background-position: center; /* keeps image centered */
+    background-repeat: no-repeat; /* prevents tiling */
+  }
+
+  button {
+    width: 40% !important; /* full width for buttons */
+    padding: 10px !important; /* consistent padding */
+    font-size: 16px !important; /* larger text for readability */
+  }
+  .resturant-frame19,
+  .resturant-frame20,
+  .resturant-frame21,
+  .resturant-frame22,
+  .resturant-frame28,
+  .resturant-frame29,
+  .resturant-frame30,
+  .resturant-frame32,
+  .resturant-frame31,
+  .resturant-frame33,
+  .resturant-frame34,
+  .resturant-frame35,
+  .resturant-frame36,
+  .resturant-frame37,
+  .resturant-frame39,
+  .resturant-frame40,
+  .resturant-frame41,
+  .resturant-frame42,
+  .resturant-frame211,
+  .resturant-frame212,
+  .resturant-frame213,
+  .resturant-frame214 {
+    left: 0 !important;
+    width: 100% !important; /* ✅ responsive width */
+    max-width: 100% !important; /* ✅ prevents overflow */
+    box-sizing: border-box !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .resturant-frame28 {
+    top: 1vh !important;
+    border: none !important;
+  }
+
+  .resturant-frame29 {
+    border: none !important;
+  }
+
+  .resturant-frame30 {
+    top: 40vh !important;
+    left: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    border: none !important;
+  }
+
+  .resturant-frame31 {
+    top: 34% !important;
+    left: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: 40vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    background-image: url("public/pic2.jpg");
+  }
+
+  .resturant-frame40 {
+    left: 13px !important;
+    width: 93vw !important;
+  }
+
+  .resturant-frame21 {
+    top: 97vh !important;
+    height: 500vh !important;
+    padding: 40px !important; /* add padding for better spacing */
+  }
+
+  .resturant-text103,
+  .resturant-text109,
+  .resturant-text139,
+  .resturant-text188 {
+    font-size: min(7vw, 22px) !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    position: relative !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
+  .resturant-frame29,
+  .resturant-frame30 {
+    height: auto !important;
+    min-height: 120px !important;
+  }
+  .resturant-pexelsamar175936401 {
+    left: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: auto !important;
+    box-sizing: border-box !important;
+  }
+  .resturant-frame27,
+  .resturant-frame26,
+  .resturant-frame25,
+  .resturant-frame23,
+  .resturant-frame24 {
+    left: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: auto !important;
+    border-radius: 0 !important;
+    background-size: contain !important;
+    background-position: center !important;
+    box-sizing: border-box !important;
+  }
+  .resturant-vector1 {
+    left: 0px !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    transform: translateX(0) !important;
+    margin-top: 35px !important;
+  }
+
+  .resturant-text139 {
+    left: 50% !important; /* push center horizontally */
+    top: 30% !important; /* move it lower on the screen */
+    transform: translateX(-50%) !important; /* perfect centering */
+    font-size: 1.2rem !important; /* adjust font size for smaller screens */
+  }
+  .resturant-frame32 {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* spacing between elements */
+    width: 100%;
+    max-height: 300px; /* set height limit */
+    overflow-y: auto; /* ✅ enables vertical scrollbar */
+    overflow-x: hidden; /* hides horizontal scrollbar */
+    padding: 10px;
+    border: 1px solid rgba(246, 232, 195, 1) !important;
+    box-sizing: border-box;
+    top: 67.5% !important; /* reset top position */
+  }
+  .resturant-text103 {
+    font-size: 2.2rem !important; /* adjust font size for smaller screens */
+  }
+
+  .resturant-text107 {
+    width: 60% !important; /* make it full-width */
+  }
+  .resturant-text144,
+  .resturant-text154,
+  .resturant-text164,
+  .resturant-text174 {
+    font-size: 1.2rem !important; /* adjust font size for smaller screens */
+    text-align: center !important;
+    width: 90% !important; /* make them almost full-width */
+    margin: 0 auto !important; /* center text */
+  }
+
+  .resturant-text185 {
+    left: 50% !important; /* push center horizontally */
+    transform: translateX(-50%) !important;
+    font-size: 1.5rem !important;
+  }
+
+  .resturant-text186 {
+    left: 53% !important; /* push center horizontally */
+    text-align: center !important;
+    margin-top: -13% !important;
+  }
+  .resturant-frame39,
+  .resturant-frame35,
+  .resturant-frame36 {
+    height: 72.8vh !important;
+  }
+
+  .resturant-frame35 {
+    top: 46% !important;
+  }
+
+  .resturant-frame36 {
+    top: 48% !important;
+  }
+
+  .resturant-text143 {
+    top: 66% !important;
+    font-size: 1.5rem !important;
+  }
+
+  .resturant-text184 {
+    top: 2% !important;
+    left: 50% !important; /* push center horizontally */
+    font-size: 3rem !important;
+  }
+
+  .resturant-frame37 {
+    top: 56.6% !important;
+    height: 30vh !important;
+    width: 100vw !important;
+    background-image: url("public/story.jpg") !important;
+  }
+
+  .resturant-frame41 {
+    top: 77.5% !important;
+    height: 35vh !important;
+    background-image: url("public/pics3.jpg");
+  }
+
+  .resturant-text186 {
+    top: 25% !important;
+  }
+  .resturant-line15,
+  .resturant-line16 {
+    width: 150px !important;
+  }
+  .footer-logo {
+    left: 37%;
+    width: 100px;
+  }
+  .resturant-line3 {
+    margin-top: -25px !important;
+    left: 67% !important;
+    width: 15% !important;
+    max-width: 100% !important;
+    height: 1px !important;
+    position: absolute !important;
+    background-color: rgba(246, 232, 195, 1) !important;
+  }
+  .resturant-line4 {
+    left: 50% !important;
+    height: 40% !important;
+    max-height: 100% !important;
+    width: 1px !important;
+    position: absolute !important;
+    background-color: rgba(246, 232, 195, 1) !important;
+  }
+
+  .resturant-frame41 button {
+    bottom: 40% !important;
+  }
+  .resturant-text200,
+  .resturant-text211,
+  .resturant-line12 {
+    display: none !important;
+  }
+
+  .resturant-frame34 {
+    flex-direction: column;
+    align-items: center; /* center reviews */
+  }
+
+  .resturant-frame34 > div {
+    width: 90%; /* make them almost full-width */
+  }
+
+  .resturant-text188 {
+    font-size: 1.2rem !important; /* adjust font size for smaller screens */
+  }
+
+  .resturant-facebook,
+  .resturant-whats-app,
+  .resturant-linked-in2 {
+    width: 50px !important;
+    height: 30px !important;
+    top: 460px !important;
+    left: -130px !important;
+    position: relative !important;
+  }
+
+  .resturant-text189 {
+    top: 250px !important;
+    left: 250px !important;
+  }
+  .resturant-text210 {
+    top: 180px !important;
+    left: -50px !important;
+  }
+
+  .resturant-text199 {
+    font-size: 2rem !important;
+    left: -10px !important;
+  }
+}
