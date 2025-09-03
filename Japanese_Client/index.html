@@ -1,639 +1,276 @@
 <!DOCTYPE html>
-<html lang="english">
-  <head>
-    <title>exported project</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="utf-8" />
-    <meta property="twitter:card" content="summary_large_image" />
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Japanese Restaurant</title>
 
-    <style data-tag="reset-style-sheet">
-      html {
-        line-height: 1.15;
-      }
-      body {
-        margin: 0;
-      }
-      * {
-        box-sizing: border-box;
-        border-width: 0;
-        border-style: solid;
-        -webkit-font-smoothing: antialiased;
-      }
-      p,
-      li,
-      ul,
-      pre,
-      div,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      figure,
-      blockquote,
-      figcaption {
-        margin: 0;
-        padding: 0;
-      }
-      button {
-        background-color: transparent;
-      }
-      button,
-      input,
-      optgroup,
-      select,
-      textarea {
-        font-family: inherit;
-        font-size: 100%;
-        line-height: 1.15;
-        margin: 0;
-      }
-      button,
-      select {
-        text-transform: none;
-      }
-      button,
-      [type="button"],
-      [type="reset"],
-      [type="submit"] {
-        -webkit-appearance: button;
-        color: inherit;
-      }
-      button::-moz-focus-inner,
-      [type="button"]::-moz-focus-inner,
-      [type="reset"]::-moz-focus-inner,
-      [type="submit"]::-moz-focus-inner {
-        border-style: none;
-        padding: 0;
-      }
-      button:-moz-focus,
-      [type="button"]:-moz-focus,
-      [type="reset"]:-moz-focus,
-      [type="submit"]:-moz-focus {
-        outline: 1px dotted ButtonText;
-      }
-      a {
-        color: inherit;
-        text-decoration: inherit;
-      }
-      input {
-        padding: 2px 4px;
-      }
-      img {
-        display: block;
-      }
-      details {
-        display: block;
-        margin: 0;
-        padding: 0;
-      }
-      summary::-webkit-details-marker {
-        display: none;
-      }
-      [data-thq="accordion"] [data-thq="accordion-content"] {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-in-out;
-        padding: 0;
-      }
-      [data-thq="accordion"]
-        details[data-thq="accordion-trigger"][open]
-        + [data-thq="accordion-content"] {
-        max-height: 1000vh;
-      }
-      details[data-thq="accordion-trigger"][open]
-        summary
-        [data-thq="accordion-icon"] {
-        transform: rotate(180deg);
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-    </style>
-    <style data-tag="default-style-sheet">
-      html {
-        font-family: Inter;
-        font-size: 16px;
-      }
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Sawarabi+Mincho&display=swap" rel="stylesheet" />
 
-      body {
-        font-weight: 400;
-        font-style: normal;
-        text-decoration: none;
-        text-transform: none;
-        letter-spacing: normal;
-        line-height: 1.15;
-        color: var(--dl-color-theme-neutral-dark);
-        background: var(--dl-color-theme-neutral-light);
-        fill: var(--dl-color-theme-neutral-dark);
-      }
-    </style>
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/animate.css@4.1.1/animate.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
-    />
-  </head>
-  <body>
-    <link rel="stylesheet" href="./style.css" />
-    <div>
-      <link href="./index.css" rel="stylesheet" />
-      <link href="./parallax.css" rel="stylesheet" />
+  <!-- Base Styles -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-      <div class="resturant-container">
-        <div class="resturant-resturant">
-          <div class="resturant-frame19">
-            <div
-              class="resturant-rectangle10"
-            ></div>
-      
-            <div class="overlay-rectangle"></div>
-            <header data-include="header.html"></header>
-            <div class="hero-text">
-              <span class="resturant-text103">
-                <span>Resturant Name</span>
-                <br />
-              </span>
-             <span class="resturant-text107">
-              Welcome to our cozy corner of flavors! Indulge in a culinary journey crafted just for you.
-            </span>
-            </div>
-            <button class="resturant-frame210">Button</button>
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: #1e1e1e;
+      background-color: #fafafa;
+    }
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: #1E5158;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
 
-            <div class="resturant-frame20"></div>
-            <div class="resturant-frame22"></div>
-          </div>
-          <div class="wave-wrapper">
-            <img
-              alt="Vector18611"
-              src="public/Vector 1 (6).svg"
-              class="resturant-vector1"
-            />
-          </div>
+  .logo {
+    font-family: 'Sawarabi Mincho', serif;
+    font-size: 1.8rem;
+    color: #fff;
+    text-decoration: none; /* remove underline */
+    font-weight: bold;
+  }
 
-          <div class="resturant-frame21">
-            <div class="resturant-line12"></div>
-            <div class="resturant-frame28 reveal">
-              <div class="resturant-text109">
-                <span>Inspired by traditional flavors,</span>
-                <br />
-                <span>Yayoi offers a fresh, creative</span>
-                <br />
-                <span>and</span>
-                <br />
-                <span>respectful interpretation of</span>
-                <br />
-                <span>Japanese cuisine</span>
-              </div>
-              <div class="resturant-frame29 reveal"></div>
-              <div class="resturant-frame30 reveal">
-                <div class="resturant-text120">
-                  <div class="heading">
-                    <span>Experience</span>
-                  <br />
-                  <span>Authentic</span>
-                  <br />
-                  <span>Japanese Flavors</span>
-                  <br />
-                  </div>
-                  
-                  <br />
-                  <span>
-                    Savor the taste of tradition with our fresh sushi,
-                  </span>
-                  <br />
-                  <span>handcrafted ramen, and seasonal delicacies</span>
-                  <br />
-                  <span>prepared by master chefs. Join us for an</span>
-                  <br />
-                  <span>unforgettable dining journey in the heart of</span>
-                  <br />
-                  <span>Japan's culinary culture</span>
-                  <button class="resturant-frame210">Button</button>
-                </div>
-              </div>
-              <img
-              alt="pexelsamar1759364019314"
-              src="public/pexelsamar1759364019314-jhu6-600h.png"
-              class="resturant-pexelsamar175936401"
-              />
-            </div>
-            <div class="resturant-frame31 reveal">
-              <div class="overlay-rectangle"></div>
-              <div class="resturant-text139">
-                <span>
-                  Delight in the art of Japanese cuisine with our carefully
-                  curated menu featuring classic dishes made from the finest
-                  ingredients.
-                </span>
-                <br />
-                <button class="resturant-frame210">Button</button>
-              </div>
-            </div>
-            <span class="resturant-text143">What Our Diners Say About Us</span>
-            <div class="resturant-frame32 reveal">
-              <div class="resturant-frame33"></div>
-              <div class="resturant-frame34">
-                <div class="resturant-text154">
-                  <span>
-                    “Authentic Japanese flavors with a cozy atmosphere!”
-                  </span>
-                  <br />
-                  <br />
-                  <span>
-                    I visited this restaurant last week and was blown away by
-                    the freshness and quality of the sushi. The chef's attention
-                    to detail really shows in every bite.
-                  </span>
-                  <br />
-                  <br />
-                  <br />
-                  <span>→ Erika</span>
-                  <br />
-                </div>
-                <div class="resturant-text164">
-                  <span>
-                    “Authentic Japanese flavors with a cozy atmosphere!”
-                  </span>
-                  <br />
-                  <br />
-                  <span>
-                    I visited this restaurant last week and was blown away by the
-                    freshness and quality of the sushi. The chef's attention to
-                    detail really shows in every bite.
-                  </span>
-                  <br />
-                  <br />
-                  <br />
-                  <span>→ Erika</span>
-                  <br />
-                </div>
-                <div class="resturant-text174">
-                  <span>
-                    “Authentic Japanese flavors with a cozy atmosphere!”
-                  </span>
-                  <br />
-                  <br />
-                  <span>
-                    I visited this restaurant last week and was blown away by the
-                    freshness and quality of the sushi. The chef's attention to
-                    detail really shows in every bite.
-                  </span>
-                  <br />
-                  <br />
-                  <br />
-                  <span>→ Erika</span>
-                  <br />
-                </div>
-              </div>
-            </div>
-            <div
-            class="resturant-line13"
-            ></div>
-            <div
-            class="resturant-line14"
-            ></div>
-            <div class="resturant-frame37 reveal"></div>
-            <div class="resturant-frame35 reveal">
-              <span class="resturant-text184">Our Story</span>
+  .logo:hover {
+    color: #F5A623; /* subtle hover effect */
+  }
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+  }
 
-              <div class="resturant-frame39">
-                <div class="resturant-text186">
-                  At [Restaurant Name], we believe that dining is more than just
-                  eating — it's an experience that brings people together.
-                  Inspired by the rich culinary traditions of Japan, our journey
-                  began with a simple passion: to share authentic, handcrafted
-                  Japanese flavors with our community. From sourcing the
-                  freshest ingredients to carefully preparing each dish with
-                  respect and precision, we honor the art of Japanese cuisine in
-                  every bite. Whether you're enjoying our delicate sushi,
-                  comforting ramen, or savory yakitori, we invite you to step
-                  into a space where tradition meets warmth, and every meal
-                  tells a story. Welcome to our table — welcome to a taste of
-                  Japan.
-                </div>
-              </div>
-            </div>
-            <div class="resturant-frame41 reveal">
-              <div class="overlay-rectangle"></div>
-              <span class="resturant-text188">
-                Join Us To Our Resturant To Taste Heavenly Taste Of Japanese
-                Cuisine
-              </span>
-              <button class="resturant-frame210">Button</button>
-            </div>
-            <footer data-include="footer.html"></footer>
-            <div class="resturant-frame36 reveal"></div>
-          </div>
-          
-          <div class="resturant-frame27 reveal"></div>
-          <div class="resturant-frame26 reveal"></div>
-          <div class="resturant-frame25 reveal"></div>
-          <div class="resturant-frame23 reveal"></div>
-          <div class="resturant-frame24 reveal"></div>
-    
-        </div>
-      </div>
+  .nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+
+  .nav-links li a:hover {
+    color: #F5A623;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 40px;
+      flex-direction: column;
+      background: #1E5158;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .nav-links.active {
+      display: flex;
+    }
+
+    .menu-toggle {
+      display: block;
+      cursor: pointer;
+    }
+  }
+
+
+    header, footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #1E5158;
+      color: #fff;
+    }
+
+    .hero {
+      background: url("public/pexelsamar1759364019314-jhu6-600h.png") center/cover no-repeat;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+    }
+
+    .hero h1 {
+      font-family: 'Sawarabi Mincho', serif;
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto 20px;
+      font-size: 1.1rem;
+    }
+
+    .btn {
+      padding: 12px 28px;
+      background: #F5A623;
+      border: none;
+      border-radius: 30px;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #e28e0e;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      font-family: 'Sawarabi Mincho', serif;
+      color: #1E5158;
+    }
+
+    .menu-gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .menu-gallery img {
+      width: 720px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .menu-gallery img:hover {
+      transform: scale(1.05);
+    }
+
+  footer {
+    background: #1E5158;
+    color: #fff;
+    padding: 40px 20px 20px;
+    margin-top: 40px;
+  }
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #F5A623;
+  }
+
+  .footer-section p,
+  .footer-section a {
+    font-size: 0.95rem;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .footer-section a:hover {
+    color: #F5A623;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 15px;
+    font-size: 0.85rem;
+  }
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="navbar">
+      <a href="../index.html" class="logo">Yayoi</a>
     </div>
-    <script src="script.js"></script>
-  </body>
+  </header>
+
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>Welcome to Yayoi</h1>
+    <p>Indulge in a culinary journey crafted just for you. Experience authentic Japanese flavors in a cozy setting.</p>
+    <button class="btn">Reserve Now</button>
+  </div>
+
+  <!-- About Section -->
+
+  <!-- Menu Section -->
+  <section>
+    <h2>Our Menu</h2>
+    <div class="menu-gallery">
+      <img src="https://imgs.search.brave.com/jECs80rNoRSzOFG0Rb3v8JPMM--o8P4N-JCdLQ4cO0M/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmV0/c3lzdGF0aWMuY29t/LzEzMTc2MjQxL3Iv/aWwvYjQ2ZmJiLzQ3/Njk0NDc4OTUvaWxf/NjAweDYwMC40NzY5/NDQ3ODk1X2RvZ3Au/anBn" alt="Sushi Menu" />
+      <img src="https://imgs.search.brave.com/jECs80rNoRSzOFG0Rb3v8JPMM--o8P4N-JCdLQ4cO0M/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmV0/c3lzdGF0aWMuY29t/LzEzMTc2MjQxL3Iv/aWwvYjQ2ZmJiLzQ3/Njk0NDc4OTUvaWxf/NjAweDYwMC40NzY5/NDQ3ODk1X2RvZ3Au/anBn" alt="Ramen Menu" />
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+
+  <!-- Call to Action -->
+  <section>
+    <h2>Join Us Today</h2>
+    <p>Step into a space where tradition meets warmth. Let us serve you a taste of Japan.</p>
+  </section>
+
+  <!-- Footer -->
+<footer>
+  <div class="footer-container">
+    
+    <!-- Location -->
+    <div class="footer-section">
+      <h3>📍 Our Location</h3>
+      <p>123 Sakura Street, Dhaka, Bangladesh</p>
+      <p>Open: Mon – Sun | 11:00 AM – 10:00 PM</p>
+    </div>
+    
+    <!-- Contact -->
+    <div class="footer-section">
+      <h3>📞 Contact Us</h3>
+      <p>Phone: +880 1234 567 890</p>
+      <p>Email: contact@yayoi.jp</p>
+      <p>Follow us: 
+        <a href="#">Facebook</a> | 
+        <a href="#">Instagram</a>
+      </p>
+    </div>
+    
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Yayoi Japanese Restaurant. All rights reserved.</p>
+  </div>
+</footer>
+
+
+</body>
 </html>

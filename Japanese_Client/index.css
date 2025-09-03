@@ -909,6 +909,36 @@
 .resturant-frame41 button {
   margin-bottom: -2.7rem;
 }
+.resturant-frame-menu {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.resturant-text-menu {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.resturant-menu-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.resturant-menu-img {
+  width: 300px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
+  transition: transform 0.3s;
+}
+
+.resturant-menu-img:hover {
+  transform: scale(1.05);
+}
 
 .overlay-rectangle {
   position: absolute;
